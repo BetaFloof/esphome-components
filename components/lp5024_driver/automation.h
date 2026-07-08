@@ -13,7 +13,7 @@ template<typename... Ts> class LP5024SetLEDAction final : public Action<Ts...> {
   TEMPLATABLE_VALUE(uint8_t, blue)
   TEMPLATABLE_VALUE(uint8_t, brightness)
 
-  void play(const Ts &...x) override {$
+  void play(const Ts &...x) override {
     auto light_id = this->light_id_.value(x...);
     auto red = this->red_.value(x...);
     auto green = this->green_.value(x...);
@@ -31,7 +31,7 @@ template<typename... Ts> class LP5024SetAllLEDAction final : public Action<Ts...
   TEMPLATABLE_VALUE(uint8_t, blue)
   TEMPLATABLE_VALUE(uint8_t, brightness)
 
-  void play(const Ts &...x) override {$
+  void play(const Ts &...x) override {
     auto red = this->red_.value(x...);
     auto green = this->green_.value(x...);
     auto blue = this->blue_.value(x...);
