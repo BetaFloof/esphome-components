@@ -3,8 +3,7 @@
 #include "esphome/core/component.h"
 #include "esphome/components/i2c/i2c.h"
 
-namespace esphome {
-namespace lp5024_driver {
+namespace esphome::lp5024_driver {
 
 // LP5024 Registers
 #define REG_DEVICE_CONFIG0   0x00
@@ -22,8 +21,24 @@ class LP5024 : public i2c::I2CDevice, public Component {
   void setup() override;
   void loop() override;
   void dump_config() override;
+
+  void set_light_id(uint8_t light_id) { this->light_id_ = light_id; }
+  void set_red(uint8_t red) { this->red_ = red; }
+  void set_green(uint8_t green) { this->green_ = green; }
+  void set_blue(uint8_t blue) { this->blue_ = blue; }
+  void set_brightness(uint8_t brightness) { this->brightness_ = brightness; }
+
+  void setLED(uint8_t light_id, uint8_t red, uint8_t green, uint8_t blue, uint8_t brightness);
+  void setAllLED(uint8_t red, uint8_t green, uint8_t blue, uint8_t brightness);
+
+ protected:
+  uint8_t light_id_{0};
+  uint8_t red_{0};
+  uint8_t green_{0};
+  uint8_t blue_{0};
+  uint8_t brightness_{0};
 };
 
+extern LP5024 *global_lp5024_component;
 
-}  // namespace lp5024_driver
-}  // namespace esphome
+}  // namespace esphome::lp5024_driver
