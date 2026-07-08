@@ -50,4 +50,6 @@ void LP5024::setAllLED(uint8_t red, uint8_t green, uint8_t blue, uint8_t brightn
   }
 }
 
+LP5024 *global_lp5024_component;
+
 }  // namespace esphome::lp5024_driver
