@@ -19,7 +19,6 @@ namespace esphome::lp5024_driver {
 class LP5024 : public i2c::I2CDevice, public Component {
  public:
   void setup() override;
-  void loop() override;
   void dump_config() override;
 
   void set_light_id(uint8_t light_id) { this->light_id_ = light_id; }
