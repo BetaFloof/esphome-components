@@ -7,7 +7,7 @@ namespace lp5024_driver {
 static const char *TAG = "lp5024_driver.component";
 
 void LP5024::setup() {
-
+    ESP_LOGD(TAG, "Setting up LP5024...");
 }
 
 void LP5024::loop() {
