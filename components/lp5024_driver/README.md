@@ -5,11 +5,6 @@ Details from: [LP5024 LED Driver](https://www.ti.com/lit/ds/symlink/lp5024.pdf)
 
 ## Example configuration
 ````
-external_components:
-  - source:
-      type: local
-      path: esphome-components
-
 i2c:
   - scl: 5
     sda: 4
