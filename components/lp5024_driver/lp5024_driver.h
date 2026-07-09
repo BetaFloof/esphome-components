@@ -27,8 +27,9 @@ class LP5024 : public i2c::I2CDevice, public Component {
   void set_blue(uint8_t blue) { this->blue_ = blue; }
   void set_brightness(uint8_t brightness) { this->brightness_ = brightness; }
 
-  void setLED(uint8_t light_id, uint8_t red, uint8_t green, uint8_t blue, uint8_t brightness);
-  void setAllLED(uint8_t red, uint8_t green, uint8_t blue, uint8_t brightness);
+  void setLED();
+  void setAllLED();
+  void clearAllLED();
 
  protected:
   uint8_t light_id_{0};
@@ -37,7 +38,4 @@ class LP5024 : public i2c::I2CDevice, public Component {
   uint8_t blue_{0};
   uint8_t brightness_{0};
 };
-
-extern LP5024 *global_lp5024_component;
-
 }  // namespace esphome::lp5024_driver
